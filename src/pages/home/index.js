@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { withStyles, Typography, Divider } from "@material-ui/core";
+import { withStyles, Typography, Divider, Card, CardActions, CardContent, Button } from "@material-ui/core";
+import PropTypes from 'prop-types';
 
 const styles = theme => ({
   root: {
@@ -8,18 +9,45 @@ const styles = theme => ({
     maxWidth: "80vw",
     marginLeft: "10vw",
   },
+  card: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
 });
 
-class Home extends Component {
-  render() {
-    const { classes } = this.props;
+function SimpleCard(props) {
+  const { classes } = props;
+  const bull = <span className={classes.bullet}>•</span>;
 
-    return (
-      <div className={classes.root}>
-        
-      </div>
-    );
-  }
+  return (
+    <Card className={classes.card}>
+    <br />
+      <CardContent>
+        <Typography variant="h5" component="h2">
+          About Me
+        </Typography>
+        <Typography component="p">
+          When I learn to program, I will be able to write that I am a programmer.
+          <br />
+          {'"a benevolent smile"'}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
 }
 
-export default withStyles(styles)(Home);
+SimpleCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(SimpleCard);
