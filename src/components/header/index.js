@@ -1,34 +1,43 @@
 import React, { Component } from 'react';
 import {withStyles, Typography} from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = theme => ({
     root: {
-        width: "100vw",
-        height: "64px",
-        background: theme.palette.primary[300]
+    flexGrow: 1,
     },
-    content: {
-        paddingLeft: "5vw",
-        paddingRight: "5vw"
+    grow: {
+    flexGrow: 1,
     },
-    title: {
-        lineHeight: "64px",
-        color: "#FFF"
-    }
-});
+    menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+    },
+    });
+    
 
-class Header extends Component {
-    render() {
-        const {classes} = this.props;
 
-        return (
-            <div className={classes.root}>
-                <div className={classes.content}>
-                    <Typography variant="title" className={classes.title}>Damian Błochowiak</Typography>
-                </div>
-            </div>
-        );
-    }
-}
+function ButtonAppBar(props) {
+    const { classes } = props;
+    return (
+      <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" color="inherit" className={classes.grow}>
+              Damian Błochowiak
+            </Typography>
+            <Button color="inherit">ABOUT ME</Button>
+            <Button color="inherit">PORTFOLIO</Button>
+            <Button color="inherit">CONTACT</Button>
+          </Toolbar>
+        </AppBar>
+      </div>
+    );
+  }
 
-export default withStyles(styles)(Header);
+export default withStyles(styles)(ButtonAppBar);
