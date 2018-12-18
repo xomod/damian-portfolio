@@ -24,7 +24,7 @@ class Header extends Component {
         return (
             <div className={classes.root}>
                 <div className={classes.content}>
-                    <Typography variant="title" className={classes.title}>react-website-boilerplate</Typography>
+                    <Typography variant="title" className={classes.title}>Damian Błochowiak</Typography>
                 </div>
             </div>
         );

@@ -6,12 +6,14 @@ import * as serviceWorker from "./serviceWorker";
 
 import indigo from "@material-ui/core/colors/indigo";
 import red from "@material-ui/core/colors/red";
+import blue from "@material-ui/core/colors/blue";
+
 
 // All the following keys are optional.
 // We try our best to provide a great default value.
 const theme = createMuiTheme({
   palette: {
-    primary: indigo,
+    primary: blue,
     secondary: {
       light: "#0066ff",
       main: "#0044ff",

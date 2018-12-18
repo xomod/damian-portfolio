@@ -26,7 +26,7 @@ class Footer extends Component {
         return (
             <div className={classes.root}>
                 <div className={classes.content}>
-                    <Typography className={classes.copyright}>Copyright (c) 2018 Mike Eling</Typography>
+                    <Typography className={classes.copyright}>Copyright (c) 2018 Damian Błochowiak</Typography>
                 </div>
             </div>
         );
